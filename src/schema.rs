@@ -1,12 +1,11 @@
 // @generated automatically by Diesel CLI.
 
-pub mod sql_types {
-    #[derive(diesel::query_builder::QueryId, diesel::sql_types::SqlType)]
-    #[diesel(postgres_type(name = "status_enum"))]
-    pub struct StatusEnum;
-}
+
 
 diesel::table! {
+    use diesel::sql_types::*;
+    use crate::models::Status_enum;
+
     boards (id) {
         id -> Int8,
         name -> Text,
@@ -16,13 +15,13 @@ diesel::table! {
 
 diesel::table! {
     use diesel::sql_types::*;
-    use super::sql_types::StatusEnum;
+    use crate::models::Status_enum;
 
     cards (id) {
         id -> Int8,
         board_id -> Int8,
         description -> Text,
-        status -> StatusEnum,
+        status -> Status_enum,
         created_at -> Timestamptz,
     }
 }
