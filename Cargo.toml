@@ -13,5 +13,5 @@ fern = "0.6"
 log = "0.4"
 serde ={ version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-diesel = { version = "2.1", features = ["postgres", "chrono"] }
+diesel = { version = "2.1", features = ["postgres", "chrono", "r2d2"] }
 diesel-derive-enum = { version = "2.1", features = ["postgres"] }

@@ -1,8 +1,10 @@
+mod db;
 mod logger;
 mod models;
+mod schema;
+
 #[macro_use]
 extern crate diesel;
-mod schema;
 
 type StdError = Box<dyn std::error::Error>;
 
